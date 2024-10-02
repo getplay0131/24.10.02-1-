@@ -1,0 +1,151 @@
+/* 전체 페이지의 기본 스타일 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  min-height: 100vh;
+  background: linear-gradient(45deg, #eed6f5, #d3e6f3);
+}
+
+/* 중앙 컨테이너의 스타일 */
+.container {
+  /* TODO: 컨테이너의 너비와 배경색 투명도를 조정하세요.
+     힌트: width 속성값을 줄이고, background-color에 rgba()를 사용하여 투명도를 높이세요. */
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  max-width: 80vw;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 10%;
+}
+
+/* 입력 폼 영역의 스타일 */
+.form {
+  /* TODO: 폼 영역의 배경색을 수정하세요.
+     힌트: 불투명한 색상으로 변경하세요. */
+  background-color: rgba(153, 154, 13, 0.05);
+  border-radius: inherit;
+  padding: inherit;
+}
+
+/* 폼 제목 스타일 */
+.form h3 {
+  margin: 0;
+  text-align: left;
+}
+
+/* 폼 레이아웃 설정 */
+.form form {
+  /* TODO: 그리드 열 비율을 조정하세요.
+     힌트: 두 번째 열의 너비를 고정값으로 설정하세요. */
+  display: grid;
+  grid-template-columns: 1fr 60px;
+}
+
+/* 텍스트 영역 스타일 */
+.form form textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  border-radius: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+/* 버튼 스타일 */
+.form form button {
+  /* TODO: 버튼의 색상을 변경하세요.
+     힌트: 배경색은 어둡게, 텍스트 색상은 밝게 설정하세요. */
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 10px;
+  color: #eed6f5;
+  font-family: "Poppins";
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+/* 할 일 목록의 기본 스타일 */
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 완료 및 삭제 아이콘 크기 설정 */
+.list li .complete-icon svg,
+.list li .close-icon svg {
+  /* TODO: 아이콘 크기를 조정하세요.
+     힌트: scale 대신 width와 height를 사용하세요. */
+  width: 40px;
+  height: 30px;
+  color: #fff;
+}
+
+/* 각 할 일 항목의 스타일 */
+.list li {
+  /* TODO: 그리드 레이아웃을 수정하세요.
+     힌트: 3열 그리드로 변경하고, 첫 번째와 세 번째 열의 너비를 고정값으로 설정하세요. */
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 40px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 완료 및 삭제 아이콘 컨테이너 스타일 */
+.list li .complete-icon,
+.list li .close-icon {
+  /* TODO: Flexbox 사용하여 내용 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* TODO: 마우스 커서 스타일 변경 */
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(0);
+}
+
+/* 완료된 할 일 항목의 스타일 */
+.list li.complete {
+  /* TODO: 투명도 설정 (힌트: 0.5 이하의 값 사용) */
+  opacity: 0.5;
+}
+
+/* 완료된 할 일의 완료 아이콘 색상 */
+.list li.complete .complete-icon svg {
+  /* TODO: 색상 설정 (힌트: 초록색 계열 사용) */
+  color: #080;
+}
+
+/* TODO: 추가적인 스타일 실험하기
+   - 호버 효과 추가
+   - 트랜지션 효과 적용
+   - 미디어 쿼리를 사용한 반응형 디자인
+   - 사용자 정의 스크롤바 스타일링
+*/
+.list li .complete-icon:hover,
+.list li .close-icon:hover {
+  transform: translateY(10px);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* color: #000; */
+}
